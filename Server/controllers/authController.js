@@ -7,8 +7,18 @@ const test = (req, res) =>{
 const registerUser = async (req, res) => {
     try{
         const {userName, firstName, lastName, email, password, confirmPassword} = req.body;
-        //check for valid username
-
+        //checks if email is entered
+        if(!email){
+            return res.json({
+                error: 'please enter a valid Email.'
+            })
+        };
+        //checks if userName is entered
+        if(!userName){
+            return res.json({
+                error: 'please enter a userName'
+            })
+        };
         //check for valid name
         if(!firstName || !lastName){
             return res.json({
@@ -29,7 +39,7 @@ const registerUser = async (req, res) => {
             })
         }
 
-        //Email
+        //Email & username validity
         const exist = await User.findOne({email, userName});
         if (exist) {
             return res.json({
