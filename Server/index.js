@@ -10,7 +10,11 @@ mongoose.connect(process.env.MONGO_URL)
 .catch((err) => console.log('Database Not Connected', err))
 
 //port
+
+
 const app = express();
+
+app.use(express.json())
 
 app.use('/', require('./Routes/authRoute'));
 

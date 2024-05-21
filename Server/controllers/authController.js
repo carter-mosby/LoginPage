@@ -10,7 +10,7 @@ const registerUser = async (req, res) => {
         //check for valid username
 
         //check for valid name
-        if(!firstName && !lastName){
+        if(!firstName || !lastName){
             return res.json({
                 error: 'first and last name is required.'
             })
