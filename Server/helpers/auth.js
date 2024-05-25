@@ -16,11 +16,11 @@ const hashPassword = (password) => {
     })
 };
 
-const compare = (password, hashed) => {
+const comparePassword = (password, hashed) => {
     return bcrypt.compare(password, hashed)
 };
 
 module.exports = {
     hashPassword,
-    compare
+    comparePassword
 }
