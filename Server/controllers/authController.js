@@ -68,20 +68,20 @@ const registerUser = async (req, res) => {
 //login
 const loginUser = async (req, res) => {
     try {
-        const {email, password, userName} = req.body;
+        const {email, password} = req.body;
 
         //check if user exists
-        const user = await user.findOne({email, userName});
+        const user = await User.findOne({email});
         if(!user){
             return res.json({
-                error: 'User does not exist.'
+                error: 'User does not exist.' 
             })
         }
 
 
-        const compare = await comparePassword(password, user.password);
+        const match = await comparePassword(password, user.password);
 
-        if (compare){
+        if (match){
             return res.json ('passwords match')
         }
     } catch (error) {
