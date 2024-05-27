@@ -21,6 +21,7 @@ export default function Login() {
           toast.error(data.error)
         } else {
           setData({});
+          navigate('/');
         }
       } catch (error) {
         
