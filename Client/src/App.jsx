@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import axios from 'axios';
+import Checkout from './pages/Checkout';
 import { Toaster } from 'react-hot-toast';
 import { UserContextProvider } from '../context/userContext';
 
