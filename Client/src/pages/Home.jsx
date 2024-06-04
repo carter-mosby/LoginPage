@@ -1,11 +1,9 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import './Styles/Home.css'
-
+import styles from './Styles/Home.module.css'
 export default function Home() {
   return (
-    <div>
-
+    <div className={styles.Home}>
+      <div>
+      </div>
     </div>
   )
 }
