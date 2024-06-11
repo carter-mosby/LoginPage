@@ -13,16 +13,15 @@ axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = true;
 
 function App() {
-
   return (
     <UserContextProvider>
-        <Toaster position='bottom-right' toastOptions={{duration: 2000}} />
-          <Routes>
-            <Route path='/' element={ <Login/> } />
-            <Route path='/Home' element={ <Home/> } />
-            <Route path='/register' element={ <Register/> } />
-            <Route path='/dashboard' element={ <Dashboard/> } />
-          </Routes>
+     <Toaster position='bottom-right' toastOptions={{duration: 2000}} />
+        <Routes>
+           <Route path='/' element={ <Login/> } />
+           <Route path='/Home' element={ <Home/> } />
+           <Route path='/register' element={ <Register/> } />
+           <Route path='/dashboard' element={ <Dashboard/> } />
+        </Routes>
     </UserContextProvider>
   );
 };
